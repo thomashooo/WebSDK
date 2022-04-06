@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "WebSDK"
-  spec.version      = "1.0"
+  spec.version      = "1.2"
   spec.summary      = "iOS library for interact JS."
 
   # This description is used to generate tags and improve search results.
@@ -64,7 +64,7 @@ Pod::Spec.new do |spec|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  spec.platform     = :ios
+  spec.platform     = :ios, "9.0"
   # spec.platform     = :ios, "5.0"
 
   #  When using multiple platforms
@@ -108,8 +108,8 @@ Pod::Spec.new do |spec|
   # spec.resource  = "icon.png"
   # spec.resources = "Resources/*.png"
 
-  spec.preserve_paths = "WebSDK.a"
-  spec.vendored_libraries = "WebSDK.a"
+  spec.preserve_paths = "libWebSDK.a"
+  spec.vendored_libraries = "libWebSDK.a"
 
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -134,6 +134,7 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(PODS_ROOT)" }
+  spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'armv7 x86_64 arm64' }
   # spec.dependency "JSONKit", "~> 1.4"
 
 end
