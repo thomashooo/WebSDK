@@ -21,9 +21,12 @@
  <true/>
  </dict>
  
- //自定义导航栏背景色(default is white)
+ //自定义导航栏颜色(default is white or systemBackgroundColor if support)
  - (UIColor *)webViewNavigtionBarColor {
     return [UIColor blackColor];
+ }
+ - (UIColor *)webViewNavigtionBarTintColor {
+    return [UIColor whiteColor];
  }
  */
 
