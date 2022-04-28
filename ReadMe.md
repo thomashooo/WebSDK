@@ -35,7 +35,9 @@
 
 #### 三、修改日志
 
-2022.4.26 v1.6 添加内部编码，修正中文url打开空白
+2022.4.28 v1.7 添加[webSDK removeJSCall]，销毁webSDK内循环引用（onJSCall不含强引用则无需调用）
+
+2022.4.26 v1.6 添加url中文编码方法：[webSDK urlEncode:url]，修正含中文链接打开空白
 
 2022.4.24 v1.5 修正navigationBar自定义设置
 
