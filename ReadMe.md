@@ -29,11 +29,13 @@
 ```objective-c
 #import "WebSDK.h"
 - (IBAction)pushNaviController (){
-   [self.navigationController pushViewController:[WebSDK createWebViewController:url] animated:YES];
+   [self.navigationController pushViewController:[WebSDK createWebViewController:(NSString *)url] animated:YES];
 }
 ```
 
 #### 三、修改日志
+
+2022.5.5 v1.8 添加Localizable.strings本地化；快捷url传入改为NSString *类型，内部进行urlEncode防止中文白屏
 
 2022.4.28 v1.7 添加[webSDK removeJSCall]，销毁webSDK内循环引用（onJSCall不含强引用则无需调用）
 
