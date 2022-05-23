@@ -12,17 +12,17 @@
 
 2、配置项目权限列表，打开info.plist添加：
 
+注意：定位、蓝牙权限必须，其它按需调整。
+
 ```javascript
     <key>NSLocationWhenInUseUsageDescription</key>
-    <string>进行定位导航</string>
+    <string>扫描定位信标设备</string>
     <key>NSBluetoothPeripheralUsageDescription</key>
-    <string>扫描周边iBeacon</string>
+    <string>获取蓝牙开关通知</string>
     <key>NSCameraUsageDescription</key>
-    <string>展示实景</string>
-    <key>NSMotionUsageDescription</key>
-    <string>辅助定位导航</string>
-     <key>NSMicrophoneUsageDescription</key>
-     <string>用于语音搜索服务</string>
+    <string>进行实景导航</string>
+     <key>NSMicrophoneUsageDescription</key>
+     <string>进行语音搜索服务</string>
     <key>NSAppTransportSecurity</key>
     <dict>
         <key>NSAllowsArbitraryLoads</key>
@@ -30,7 +30,7 @@
     </dict>
 ```
 
-#### 二、快速启动
+#### 二、构建快速启动VC
 
 ```objective-c
 #import "WebSDK.h"
@@ -40,7 +40,7 @@
 }
 ```
 
-#### 三、自定义启动
+#### 三、自定义WebView启动
 
 ```objective-c
     WKWebViewConfiguration *cfg = [[WKWebViewConfiguration alloc] init];
@@ -51,7 +51,7 @@
     _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:cfg];
     [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[WebSDK urlEncode:_urlStr]]]];
     [self.view addSubview:_webView];
-    //注入定位、导航、交互
+    //注入定位、导航、响应js交互window.zs.call("{action:\"test\",data:\"\"}")
     WebSDK *sdk = [WebSDK setupWebView:_webView];
         //自定义交互示例：
         //页面调用:zs.call(JSON.stringify({action:'test',data:'string & obj',callback:'appCall'}));window.appCall=function(res){ alert(res); };
@@ -60,7 +60,7 @@
          if([action isEqualToString:@"test"]) {
             NSLog(@"%@",data);
             callback(@"test callback.");
-                 }
+         }
     }];
 ```
 
