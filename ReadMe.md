@@ -41,7 +41,7 @@ B. 自定义webview配置集成：拷贝WebSDK.h/.a文件到项目，参考Custo
 
 ### plist权限配置（必要）
 
-###### 必要权限配置（至少允许使用期间定位权限，蓝牙状态获取权限）
+###### 必要权限配置（至少允许使用期间定位权限（精确位置），蓝牙状态获取权限）
 
 ```
     <key>NSLocationWhenInUseUsageDescription</key>
@@ -80,6 +80,8 @@ B. 自定义webview配置集成：拷贝WebSDK.h/.a文件到项目，参考Custo
 - 5、webView意外白屏后，自动重新reload
 
 ### changeLog
+
+* 2022.5.30 v2.0 添加预加载动画[webSDK showLoading:vc]+
 
 * 2022.5.18 v1.9 规避web弹窗权限请求。
 
