@@ -81,6 +81,8 @@ B. 自定义webview配置集成：拷贝WebSDK.h/.a文件到项目，参考Custo
 
 ### changeLog
 
+* 2022.6.6 v2.2 添加GPS->Ble蓝牙弹窗授权依次出现
+
 * 2022.5.30 v2.0 添加预加载动画[webSDK showLoading:vc]+
 
 * 2022.5.18 v1.9 规避web弹窗权限请求。
