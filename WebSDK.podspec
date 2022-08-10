@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "WebSDK"
-  spec.version      = "2.0"
+  spec.version      = "2.1"
   spec.summary      = "iOS library for interact JS."
 
   # This description is used to generate tags and improve search results.

@@ -81,6 +81,8 @@ B. 自定义webview配置集成：拷贝WebSDK.h/.a文件到项目，参考Custo
 
 ### changeLog
 
+* 2022.8.10 v2.1 新增自定义VC传入。
+
 * 2022.5.18 v1.9 规避web弹窗权限请求。
 
 * 2022.5.5 v1.8 添加Localizable.strings本地化；快捷url传入改为NSString *类型，内部进行urlEncode防止中文白屏
